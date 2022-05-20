@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <div class="gridContainer wrap">
+        <div id="debugSideBar" class="sideBar"></div>
+        <div class="bodyContent">
+            <div id="generalFlow">
+                <h4>Debug</h4>
+                <p>To debug, you may: </p>
+                <ol>
+                    <li>Check console log see whether got error message
+                        <!-- <ol>
+                            <a href="#error1"><li>Uncaught SyntaxError: Unexpected identifier</li></a>
+                            <a href="#error2"><li>When click button, page no effect (no hang)</li></a>
+                            <a href="#error3"><li>Filter not working</li></a>
+                            <a href="#error4"><li>When click button page hang, keep show loading icon</li></a>
+                            <a href="#error5"><li>After apply numberThousand function, showing NaN.00</li></a>
+                            <a href="#error6"><li>Uncaught TypeError: Cannot read property 'variable' of undefined</li></a>
+                        </ol> -->
+                    </li>
+                    <li>Check superadmin see api is it call successfully (and make sure data pass correctly)</li>
+                    <li>Check reqDefault have the command or not</li>
+                    <li>Check data you pass is it same with trello</li>
+                    <li>Grab latest language file from server using scp</li>
+                </ol>
+
+                <p>JS Error Map</p>
+                <ul>
+                    <li><a href="#error1">Uncaught SyntaxError: Unexpected identifier</a></li>
+                    <li><a href="#error2">When click button, page no effect (no hang)</a></li>
+                    <li><a href="#error3">Filter not working</a></li>
+                    <li><a href="#error4">When click button page hang, keep show loading icon</a></li>
+                    <li><a href="#error5">After apply numberThousand function, showing NaN.00</a></li>
+                    <li><a href="#error6">Uncaught TypeError: Cannot read property 'variable' of undefined</a></li>
+                    <li><a href="#error7">When click button, run function but immediately refresh page</a></li>
+                    <li><a href="#error8">Error message didn't clear keep duplicate when call api</a></li>
+                    <li><a href="#error9">Same page but backend return two api with same error ID</a></li>
+                </ul>
+            </div>
+
+            <div class="sectionDisplay firstContent" id="error1">
+                <h4>Uncaught SyntaxError: Unexpected identifier</h4>
+                <ul>
+                    <li>Check every object comma / semicolon put correctly</li>
+                </ul>
+                <img src="img/comma.jpg" alt="" class="descImg">
+            </div>
+
+            <div class="sectionDisplay" id="error2">
+                <h4>When click button, page no effect (no hang)</h4>
+                <ul>
+                    <li>Make sure all error field display correctly based on backend return</li>
+                </ul>
+                <img src="img/errorField.jpg" alt="" class="descImg">
+            </div>
+
+            <div class="sectionDisplay" id="error3">
+                <h4>Filter not working</h4>
+                <ul>
+                    <li>Make sure pass searchData instead of inputData</li>
+                    <li>dataName = username, dataType = match / like instead of text</li>
+                    <li>Go superadmin to make sure searchData pass correctly</li>
+                </ul>
+                <img src="img/reqSearchData.jpg" alt="" class="descImg">
+                <img src="img/reqSearchDataWrong.jpg" alt="" class="descImg">
+                <img src="img/searchUsernameDataSuperAdmin.jpg" alt="" class="descImg">
+            </div>
+
+            <div class="sectionDisplay" id="error4">
+                <h4>When click button page hang, keep show loading icon</h4>
+                <ul>
+                    <li>Make sure language js is up to date</li>
+                    <li>Make sure error field display correctly</li>
+                </ul>
+            </div>
+
+            <div class="sectionDisplay" id="error5">
+                <h4>After apply numberThousand function, showing NaN.00</h4>
+                <ul>
+                    <li>Try parseFloat first for number then only apply numberThousand</li>
+                    <li>Make sure backend the data you get is not -, is yes, should do a condition if data == '-', number = 0</li>
+                    <li>Check the number that need to parseFloat, if the number applied numberThousand, should use removeComma function then only do calculation. </li>
+                </ul>
+            </div>
+
+            <div class="sectionDisplay" id="error6">
+                <h4>Uncaught TypeError: Cannot read property 'variable' of undefined</h4>
+                <ul>
+                    <li>Make sure the variable is declare correctly (var variable;)</li>
+                    <li>If the variable declared global, make sure when assign variable data in function didn't declare again the variable.
+                        Use variable = 1 instead of var variable = 1 in function</li>
+                    <li>If it's Cannot read property '<span class="red">english</span>' of undefined, mean you hav to grab latest language js file from test site using scp.</li>
+                </ul>
+                <div class="codeBlock">
+<code>var declaredVar;</code>
+<code>$(document).ready(function(){});</code>
+<code>function usedFunc() {</code>
+<code>    declaredVar = YOUR_DATA; <i class="fa fa-check green"></i></code>
+<code>    var declaredVar = YOUR_DATA; <i class="fa fa-times red"></i></code>
+<code>}</code>
+
+                </div>
+            </div>
+
+            <div class="sectionDisplay" id="error7">
+                <h4>When click button, run function but immediately refresh page</h4>
+                <ul>
+                    <li>Add a type="button" to the button element.</li>
+                </ul>
+                <div class="codeBlock">
+<code>&lt;button type="button" class="btn btn-primary"&gt;Button&lt;/button&gt;</code>
+
+                </div>
+            </div>
+
+            <div class="sectionDisplay" id="error8">
+                <h4>Error message didn't clear keep duplicate when call api</h4>
+                <ul>
+                    <li>Add below code to ajaxSend function (general.js)</li>
+                </ul>
+                <div class="codeBlock">
+<code>$(".invalid-feedback").remove();</code>
+<code>$(".is-invalid").removeClass("is-invalid");</code>
+
+                </div>
+            </div>
+
+            <div class="sectionDisplay" id="error9">
+                <h4>Same page but backend return two api with same error ID</h4>
+                <ul>
+                    <li>Assume it has two api "command1" and "command2" will pass same error id "tPasswordError"</li>
+                </ul>
+                <ol>
+                    <li>HTML: One of the tPassword input should change to "tPasswordCmd" </li>
+                    <li>JS: You should pass the api name to showCustomErrorField function (general.js) [ajaxSend Func]</li>
+                    <li>JS: In showCustomErrorField function, you will need to do a condition. If api equal to command2, the error id should replace to tPasswordCmd</li>
+                </ol>
+                <p class="nextMethod">HTML</p>
+                <div class="codeBlock">
+<code>&lt;input id="tPassword<span contenteditable="true">Cmd</span>" type="text" class="form-control" /&gt;</code>
+
+                </div>
+                <p class="nextMethod">ajaxSend Function</p>
+                <div class="codeBlock">
+<code>showCustomErrorField(obj.data.field, obj.statusMsg, val['command']);</code>
+
+                </div>
+                <p class="nextMethod">showCustomErrorField Function</p>
+                <div class="codeBlock">
+<code>function showCustomErrorField(data, statusMsg, command) {</code>
+<code>    if(Array.isArray(data)) {</code>
+<code>        $.each(data, function(key, array) {</code>
+<code>            var id = '';</code>
+<code>            var msg = "";</code>
+<code>            $.each(array, function(k, v) {</code>
+<code>                if(k == 'id')</code>
+<code>                    id = v;</code>
+<code>                else if(k == 'msg')</code>
+<code>                    msg = v;</code>
+<code>                if(id == '')</code>
+<code>                    return;</code>
+<code>            });</code>
+<code>            if(id == '')</code>
+<code>                return;</code>
+<code>            else if(msg && msg.length > 0) {</code>
+<code>                switch(command) {</code>
+<code>                    case "<span contenteditable="true">command2</span>": errorDisplay(id.replace("Error", "<span contenteditable="true">Cmd</span>"),msg);</code>
+<code>                        break;</code>
+<code>                    default: errorDisplay(id.replace("Error", ""),msg);</code>
+<code>                }</code>
+<code>            }</code>
+<code>        });</code>
+<code>    }</code>
+<code>    else {</code>
+<code>        // API params checking error</code>
+<code>        errorDisplay(data.replace("Error", ""),statusMsg);</code>
+<code>    }</code>
+<code>}</code>
+                </code>
+
+                </div>
+            </div>
+
+            <div class="sectionDisplay nextContent" id="cssErr1">
+                <h4>CSS Image Stretch</h4>
+                <p>You may: </p>
+                <ul>
+                    <li>Add fix height to image</li>
+                    <li>Add align-items-start to parent container</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="backToTop"><i class="fa fa-arrow-up"></i></a>
+
+    <div class="passwordBlock" id="passwordBlock">
+        <div class="passwordWrap">
+            <input type="password" id="password" class="form-control" placeholder="Password">
+            <button id="submit" type="button" class="btn btn-success ml-1"><i class="fa fa-arrow-right"></i></button>
+        </div>
+    </div>
+</body>
+</html>
