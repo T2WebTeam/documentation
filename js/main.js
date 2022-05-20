@@ -42,7 +42,7 @@ function copyToClipboard(n) {
 }
 
 function checkPwd() {
-    var baseString = 'd2VidGVhbQ==';
+    var baseString = 'dDJ3ZWJ0ZWFt';
     var enteredPwd = $("#password").val();
     var decodedString = window.btoa(enteredPwd);
 
