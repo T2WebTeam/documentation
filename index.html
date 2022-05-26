@@ -21,25 +21,32 @@
             <!-- <div class="sectionDisplay alert alert-success alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
             </div> -->
+            <div class="sectionDisplay alert alert-danger">
+                <p><b>Must Take Note:</b></p>
+                <ol class="updateLog">
+                    <li>Do not upload differect project's related materials to current project. Eg:
+                        <ul>
+                            <li>Images/Gif/Video</li>
+                            <li>Language file</li>
+                            <li>Project name (eg. copyright)</li>
+                        </ul>
+                    </li>
+                    <li>Do not create account in LIVE site. Use DIRECTOR account if test is needed.</li>
+                    <li>Double check when importing language file in super admin.</li>
+                </ol>
+            </div>
             <div class="sectionDisplay alert alert-success">
                 <p><b>Before update task to exec, you need to:</b></p>
                 <ol class="updateLog">
-                    <li>Make sure the function is working</li>
-                    <li>Make sure listing's data fullfiled what exec requested</li>
-                    <li>Make sure all error message displayed</li>
-                    <li>Make sure all conditional statement working well
+                    <li>Make sure the function is working.</li>
+                    <li>Make sure listing's data fullfiled what exec requested.</li>
+                    <li>Make sure all error message displayed.</li>
+                    <li>Make sure all conditional statement working well.
                         <ul>
-                            <li>eg. if backend returned data then display, if not don't display it or display "no result found"</li>
+                            <li>eg. if backend returned data then display, if not don't display it or display "no result found".</li>
                         </ul>
                     </li>
-                    <li>Make sure language is plugged in</li>
-                </ol>
-
-                <p><b>2022/02/07 Updated: </b></p>
-                <ol class="updateLog">
-                    <li>Build table method 2 (build table with sub table)</li>
-                    <li>Add windows setup instructions</li>
-                    <li>Get SSH Key Instruction</li>
+                    <li>Make sure language is plugged in.</li>
                 </ol>
             </div>
             <div class="sectionDisplay" id="callBackend">
@@ -859,33 +866,6 @@
         </div>
     </div>
 
-    <div class="modal fade" id="sshKeyModal">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">How to get your SSH Key</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            <!-- Modal body -->
-            <div class="modal-body">
-                <ol>
-                    <li>open git bash</li>
-                    <li>type "ssh-keygen"
-                        <ol>
-                            <li>will ask u save sshkey at whr, press enter</li>
-                            <li>type password</li>
-                            <li>retype password</li>
-                            <li>done</li>
-                        </ol>
-                    </li>
-                    <li>type "cat .ssh/id_rsa.pub", get your ssh key</li>
-                </ol>
-            </div>
-          </div>
-        </div>
-    </div>
-
     <div class="modal fade" id="removeExtension">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
@@ -897,7 +877,12 @@
             <!-- Modal body -->
             <div class="modal-body">
                 <ol>
-                    <li>Open your C:\Apache24\conf\httpd.conf</li>
+                    <li>Open your httpd.conf
+                        <ul>
+                            <li>C:\Apache24\conf\httpd.conf ( Windows )</li>
+                            <li>vim /usr/local/etc/httpd/httpd.conf ( Mac )</li>
+                        </ul>
+                    </li>
                     <li>Search this line
                         <ul>
                             <li>#LoadModule rewrite_module modules/mod_rewrite.so</li>
@@ -914,7 +899,7 @@
                     <li>try to access any project and remove file extension</li>
                 </ol>
 
-                <span class="text-danger">*** file with extension like homepage.php should be working too de</span>
+                <span class="text-danger">*** file with extension like homepage.php should be working too</span>
             </div>
           </div>
         </div>

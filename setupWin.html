@@ -16,12 +16,10 @@
 </head>
 <body>
     <div class="gridContainer wrap">
+        <div id="setupWinSideBar" class="sideBar"></div>
         <div class="bodyContent">
-            <div class="sectionDisplay">
-                <a href="index.html" class="backBtn"><i class="fa fa-arrow-left"></i> Back</a>
-            </div>
-            <div class="sectionDisplay">
-                <h4>Software needed</h4>
+            <div class="sectionDisplay" id="softwareNeeded">
+                <h4>Software Needed</h4>
                 <ol>
                     <li>
                         <p>Subversion for Windows</p>
@@ -48,15 +46,20 @@
                         <p><a href="https://gitforwindows.org/" target="_blank">https://gitforwindows.org/</a></p>
                     </li>
                     <li>
-                        <p>Sublimes for Windows</p>
+                        <p>Sublime Text</p>
                         <p><a href="https://www.sublimetext.com/" target="_blank">https://www.sublimetext.com/</a></p>
                     </li>
                     <li>
-                        <p>Sublimes merge</p>
+                        <p>Sublime Merge</p>
                         <p><a href="https://www.sublimemerge.com/" target="_blank">https://www.sublimemerge.com/</a></p>
                     </li>
+                    <li>
+                        <p>Notepad++</p>
+                        <p><a href="https://notepad-plus-plus.org/downloads/" target="_blank">https://notepad-plus-plus.org/downloads/</a></p>
+                    </li>
                 </ol>
-
+            </div>
+            <div class="sectionDisplay" id="installation">
                 <h4 class="mt-5">Installation Procedure</h4>
                 <ol>
                     <li>Download apache and extract it</li>
@@ -85,6 +88,34 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="sshKeyModal">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">How to get your SSH Key</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+                <ol>
+                    <li>open git bash</li>
+                    <li>type "ssh-keygen"
+                        <ol>
+                            <li>will ask u save sshkey at whr, press enter</li>
+                            <li>type password</li>
+                            <li>retype password</li>
+                            <li>done</li>
+                        </ol>
+                    </li>
+                    <li>type "cat .ssh/id_rsa.pub", get your ssh key</li>
+                </ol>
+            </div>
+          </div>
+        </div>
+    </div>
+    
     <a href="#" class="backToTop"><i class="fa fa-arrow-up"></i></a>
 
     <div class="passwordBlock" id="passwordBlock">
