@@ -57,8 +57,13 @@
                         <p>Notepad++</p>
                         <p><a href="https://notepad-plus-plus.org/downloads/" target="_blank">https://notepad-plus-plus.org/downloads/</a></p>
                     </li>
+                    <li>
+                        <p>Adobe XD</p>
+                        <p><a href="https://auth.services.adobe.com/en_US/index.html?callback=https%3A%2F%2Fims-na1.adobelogin.com%2Fims%2Fadobeid%2FAdobeSupport1%2FAdobeID%2Ftoken%3Fredirect_uri%3Dhttps%253A%252F%252Fhelpx.adobe.com%252Fxd%252Fget-started.html%2523old_hash%253D%2526from_ims%253Dtrue%253Fclient_id%253DAdobeSupport1%2526api%253Dauthorize%2526scope%253DAdobeID%252Copenid%252Cgnav%252Ccreative_cloud%252Cread_organizations%252Cadditional_info.projectedProductContext%252Cadditional_info.roles%26state%3D%257B%2522ac%2522%253A%2522AdobeSupport1%2522%252C%2522jslibver%2522%253A%2522v2-v0.32.0-1-gea1608c%2522%252C%2522nonce%2522%253A%25223999957337136537%2522%257D%26code_challenge_method%3Dplain%26use_ms_for_expiry%3Dtrue&client_id=AdobeSupport1&scope=AdobeID%2Copenid%2Cgnav%2Ccreative_cloud%2Cread_organizations%2Cadditional_info.projectedProductContext%2Cadditional_info.roles&denied_callback=https%3A%2F%2Fims-na1.adobelogin.com%2Fims%2Fdenied%2FAdobeSupport1%3Fredirect_uri%3Dhttps%253A%252F%252Fhelpx.adobe.com%252Fxd%252Fget-started.html%2523old_hash%253D%2526from_ims%253Dtrue%253Fclient_id%253DAdobeSupport1%2526api%253Dauthorize%2526scope%253DAdobeID%252Copenid%252Cgnav%252Ccreative_cloud%252Cread_organizations%252Cadditional_info.projectedProductContext%252Cadditional_info.roles%26response_type%3Dtoken%26state%3D%257B%2522ac%2522%253A%2522AdobeSupport1%2522%252C%2522jslibver%2522%253A%2522v2-v0.32.0-1-gea1608c%2522%252C%2522nonce%2522%253A%25223999957337136537%2522%257D&state=%7B%22ac%22%3A%22AdobeSupport1%22%2C%22jslibver%22%3A%22v2-v0.32.0-1-gea1608c%22%2C%22nonce%22%3A%223999957337136537%22%7D&relay=bb5f51dc-f425-4418-b0ec-b238a31ccf24&locale=en_US&flow_type=token&idp_flow_type=login&s_p=apple%2Cfacebook%2Cgoogle#/" target="_blank">Sign Up and Install For Free</a></p>
+                    </li>
                 </ol>
             </div>
+
             <div class="sectionDisplay" id="installation">
                 <h4 class="mt-5">Installation Procedure</h4>
                 <ol>
@@ -83,36 +88,401 @@
                             <li>C:\Apache24\bin</li>
                         </ul>
                     </li>
-                    <li>Restart laptop and make sure apache starts automatically.</li>
+                    <li>Go to C:\Apache24\bin</li>
+                    <li>Create shortcut for Apache Monitor and move to desktop.</li>
+                    <li>Restart laptop.</li>
+                    <li>Open Apache Monitor and make sure apache starts automatically.</li>
                 </ol>
             </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="sshKeyModal">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">How to get your SSH Key</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <div class="sectionDisplay" id="sshKey">
+                <h4>Get SSH Key</h4>
+                <p>1. Open git bash</p>
+                <div class="codeBlock">
+<code>ssh-keygen</code>
+                </div>
+                <p class="nextMethod">2. Will ask u save sshkey at where, press enter</p>
+                <p>3. Type password (optional)</p>
+                <p>4. Retype password (optional)</p>
+                <p class="nextMethod">5. Copy ssh key</p>
+                <div class="codeBlock">
+<code>cat .ssh/id_rsa.pub</code>
+                </div>
             </div>
-            <!-- Modal body -->
-            <div class="modal-body">
+
+            <div class="sectionDisplay" id="setupProject">
+                <h4>Setup Project</h4>
+                <h5 class="nextMethod">Clone Repository</h5>
                 <ol>
-                    <li>open git bash</li>
-                    <li>type "ssh-keygen"
+                    <li>
+                        <p>Create an account using company email</p>
+                        <p><a href="https://gitlab.ttwoweb.com/" target="_blank">https://gitlab.ttwoweb.com/</a></p>
+                    </li>
+                    <li>Get the project link from senior</li>
+                    <li>
+                        <p>Copy url in 'Clone with HTTP'</p>
+                        <img src="img/cloneProject.jpg" alt="" class="descImg">
+                    </li>
+                    <li>Open sublime merge</li>
+                    <li>Go to File > Clone Repository
                         <ol>
-                            <li>will ask u save sshkey at whr, press enter</li>
-                            <li>type password</li>
-                            <li>retype password</li>
-                            <li>done</li>
+                            <li>Paste the url</li>
+                            <li>Make sure the path is C:\Apache24\htdocs\<span contenteditable="true" spellcheck="false">PROJECTNAME</span></li>
+                            <li>Click 'Clone'</li>
                         </ol>
                     </li>
-                    <li>type "cat .ssh/id_rsa.pub", get your ssh key</li>
+                    <li>
+                        Go to Repository > Create Branch From Remote Branch
+                        <ol>
+                            <li>Click origin/test</li>
+                            <li>Repeat and click origin/dev (if got)</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <p class="red">Make sure your current branch is 'TEST'</p>
+                        <img src="img/testBranch.jpg" alt="" class="descImg">
+                    </li>
+                </ol>
+
+                <div class="nextMethod">
+                    <h5>Setup Server IP Address</h5>
+                    <ol>
+                        <li>Open Notepad++</li>
+                        <li>In Notepad++, open <b>hosts</b> file in C:\Windows\System32\drivers\etc</li>
+                        <li>
+                            <p>Add server IP address after last line</p>
+                            <div class="codeBlock">
+<code>103.76.36.101         testfront2</code>
+<code>103.76.36.134         newtestfront3</code>
+                            </div>
+                        </li>
+                        <li>
+                            <p>Add project IP address after last line</p>
+                            <div class="codeBlock">
+<code>## <span contenteditable="true" spellcheck="false">PROJECTNAME</span></code>
+<code>127.0.0.1             <span contenteditable="true" spellcheck="false">PROJECTNAME</span>.member</code>
+<code>127.0.0.1             <span contenteditable="true" spellcheck="false">PROJECTNAME</span>.admin</code>
+<code>xxxxxxxxx             testbackend.<span contenteditable="true" spellcheck="false">PROJECTNAME</span>.testback<span contenteditable="true" spellcheck="false">x</span> //depends on project, can get from senior</code>
+<code>103.76.36.101         test<span contenteditable="true" spellcheck="false">PROJECTNAME</span>superadmin.speed101.pw</code>
+                            </div>
+                        </li>
+                        <li>
+                            Save the file
+                            <ol>
+                                <li>Will ask permission to edit as administrator, click yes</li>
+                                <li>Save again</li>
+                            </ol>
+                        </li>
+                        <li>Restart Apache</li>
+                    </ol>
+                    <p class="nextMethod red">*You need to restart Apache everytime you edit <b>hosts</b> file</p>   
+                </div>
+                
+                <div class="nextMethod">
+                    <h5>Setup Local URL (vhosts.conf)</h5>
+                    <ol>
+                        <li>Open Notepad++</li>
+                        <li>In Notepad++, open <b>vhosts.conf</b> file in C:\Apache24\conf</li>
+                        <li>
+                            <p>Add your project directory path and local url</p>
+                            <div class="codeBlock">
+<code>&lt;VirtualHost *:80&gt;</code>
+<code>    DocumentRoot "C:\Apache24\htdocs\<span contenteditable="true" spellcheck="false">PROJECTNAME</span>Frontend\admin"</code>
+<code>    ServerName <span contenteditable="true" spellcheck="false">PROJECTNAME</span>.admin</code>
+<code>    ErrorLog "logs/<span contenteditable="true" spellcheck="false">PROJECTNAME</span>.admin-error.log"</code>
+<code>    CustomLog "logs/<span contenteditable="true" spellcheck="false">PROJECTNAME</span>.admin.log" common</code>
+<code>&lt;/VirtualHost&gt;</code>
+<br>
+<code>&lt;VirtualHost *:80&gt;</code>
+<code>    DocumentRoot "C:\Apache24\htdocs\<span contenteditable="true" spellcheck="false">PROJECTNAME</span>Frontend\member"</code>
+<code>    ServerName <span contenteditable="true" spellcheck="false">PROJECTNAME</span>.member</code>
+<code>    ErrorLog "logs/<span contenteditable="true" spellcheck="false">PROJECTNAME</span>.member-error.log"</code>
+<code>    CustomLog "logs/<span contenteditable="true" spellcheck="false">PROJECTNAME</span>.member.log" common</code>
+<code>&lt;/VirtualHost&gt;</code>
+                            </div>
+                        </li>
+                        <li>
+                            Save the file</li>
+                        <li>Restart Apache</li>
+                    </ol>
+                    <p class="nextMethod red">*You need to restart Apache everytime you edit <b>vhosts.conf</b> file</p>
+                    <p class="nextMethod blue">After done setup host and vhosts.conf, open your browser and check whether you can access the web page</p>
+                    <div class="codeBlock">
+<code><span contenteditable="true" spellcheck="false">PROJECTNAME</span>.member/</code>
+                    </div>
+                    <div class="codeBlock">
+<code><span contenteditable="true" spellcheck="false">PROJECTNAME</span>.admin/</code>
+                    </div>
+                </div>
+                
+                <div class="nextMethod" id="grabConfig">
+                    <h5>Grab Lastest Config</h5>
+                    <p class="red">*Each project has different <b>config.php</b>, <a href="https://docs.google.com/spreadsheets/d/1tO3cnN6ovyjyYIrJ6raogXZ_ZHq88dCUnlDH1J8NPcw/edit#gid=0" target="_blank">refer here</a></p>  
+                    <p class="nextMethod">You need to have config.php to login to the project in browser.</p>
+                    <ol>
+                        <li>Open command prompt</li>
+                        <li>
+                            <p>Cd to the project directory > member/admin > include</p>
+                            <div class="codeBlock">
+<code>cd C:\Apache24\htdocs\<span contenteditable="true" spellcheck="false">PROJECTNAME</span>Frontend\<span contenteditable="true" spellcheck="false">member</span>\include</code>
+                            </div>
+                        </li>
+                        <li>
+                            <p>Scp config.php from test site to local repository</p>
+                            <div class="codeBlock">
+<code>scp root@testfront2:/var/www/<span contenteditable="true" spellcheck="false">PROJECTNAME</span>ProjectTEST/<span contenteditable="true" spellcheck="false">member</span>/include/config.php .</code>
+                            </div>
+                        </li>
+                        <li>
+                            Check whether config.php is grab successfully to your project directory
+                            <ul>
+                                <li>cd C:\Apache24\htdocs\<span contenteditable="true" spellcheck="false">PROJECTNAME</span>Frontend\<span contenteditable="true" spellcheck="false">member</span>\include</li>
+                            </ul>
+                        </li>
+                        <li>Open config.php in Sublime Text (or any code editor software)</li>
+                        <li>
+                            <p>Add below line in config.php (if don't have)</p>
+                            <div class="codeBlock">
+<code>'isLocalHost' => 1,</code>
+                            </div>
+                        </li>
+                        <li>Refresh your browser and check whether can login to the project</li>
+                    </ol>
+                </div>    
+
+                <div class="nextMethod" id="grabLang">
+                    <h5>Grab Lastest Language</h5>
+                    <p class="red">*Each project has different <b>language</b>, <a href="https://docs.google.com/spreadsheets/d/1tO3cnN6ovyjyYIrJ6raogXZ_ZHq88dCUnlDH1J8NPcw/edit#gid=0" target="_blank">refer here</a></p> 
+                    <p class="nextMethod">You need to grab lastest language to view latest language in browser.</p>
+                    <ol>
+                        <li>Open command prompt</li>
+                        <li>
+                            <p>Cd to the project directory > member/admin > language</p>
+                            <div class="codeBlock">
+<code>cd C:\Apache24\htdocs\<span contenteditable="true" spellcheck="false">PROJECTNAME</span>Frontend\<span contenteditable="true" spellcheck="false">member</span>\language</code>
+                            </div>
+                        </li>
+                        <li>
+                            <p>Scp language php file from test site to local repository</p>
+                            <div class="codeBlock">
+<code>scp root@testfront2:/var/www/<span contenteditable="true" spellcheck="false">PROJECTNAME</span>projecttest/member/language/lang_all.php .</code>
+                            </div>
+                        </li>
+                        <li>
+                            <p>Scp language js file from test site to local repository</p>
+                            <div class="codeBlock">
+<code>scp root@testfront2:/var/www/<span contenteditable="true" spellcheck="false">PROJECTNAME</span>projecttest/member/language/lang_english.js .</code>
+                            </div>
+                        </li>
+                        <li>
+                            Check whether language files are grab successfully to your project directory
+                            <ul>
+                                <li>cd C:\Apache24\htdocs\<span contenteditable="true" spellcheck="false">PROJECTNAME</span>Frontend\<span contenteditable="true" spellcheck="false">member</span>\language</li>
+                            </ul>
+                        </li>
+                        <li>Refresh your browser and check whether the language have updated</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="sectionDisplay" id="commitCode">
+                <h4>Commiting Code</h4>
+                <ol>
+                    <li>Make sure you commit your code in test branch</li>
+                    <li>Pull before you commit your code</li>
+                    <li>
+                        <p>Write commit message based on the format below</p>
+                        <ul>
+                            <li>
+                                <p>Module/Feature</p>
+                                <div class="codeBlock">
+<code>[Admin][Module][pageName] description</code>
+<code>[Member][Module][pageName] description</code>
+<br>
+<code>eg. [Member][NicePay][payment.php] plugin nicepay module</code>
+<code>eg. [Admin][NicePay][paymentListing.php] plugin nicepay payment listing</code>
+                                </div>
+                            </li>
+                            <li>
+                                <p>Document Tuning</p>
+                                <div class="codeBlock">
+<code>[Admin][doc + date][pageName] description</code>
+<code>[Member][doc + date][pageName] description</code>
+<br>
+<code>eg. [Admin][doc140622][portfolio.php] add 'memberID' column & filter</code>
+                                </div>
+                            </li>
+                            <li>
+                                <p>Normal Tuning</p>
+                                <div class="codeBlock">
+<code>[Admin][pageName] description</code>
+<code>[Member][pageName] description</code>
+<br>
+<code>eg. [Member][support.php] tune input background color</code>
+                                </div>
+                            </li>
+                            <li>
+                                <p>If commited a commit but still need to commit another tuning</p>
+                                <div class="codeBlock">
+<code>Add (No) behind the description</code>
+<br>
+<code>eg. [Member][profile.php] tune client ID to member ID</code>
+<code>eg. [Member][profile.php] tune client ID to member ID (2)</code>
+                                </div>
+                            </li>
+                            <li>For document tuning which involve many pages, if not related to layout, please separate the commit.</li>
+                            <li>For document tuning which related to layout or one whole set, can commit together.</li>
+                        </ul>
+                    </li>
+                    <li>Commit and push your commit to test branch</li>
                 </ol>
             </div>
-          </div>
+
+            <div class="sectionDisplay" id="updateTestSite">
+                <h4>Update Test Site</h4>
+                <ol>
+                    <li>Open command prompt</li>
+                    <li>
+                        <p>ssh to project test server</p>
+                        <div class="codeBlock">
+<code>ssh root@newtestfront3</code>
+                        </div>
+                    </li>
+                    <li>
+                        <p>cd to project directory</p>
+                        <div class="codeBlock">
+<code>cd /var/www/</code>
+                        </div>
+                    </li>
+                    <li>
+                        <p>Check whether the project folder is inside the directory</p>
+                        <div class="codeBlock">
+<code>ls</code>
+                        </div>
+                    </li>
+                    <li>
+                        <p>If yes, cd to the project</p>
+                        <div class="codeBlock">
+<code>cd <span contenteditable="true" spellcheck="false">PROJECTNAME</span></code>
+                        </div>
+                    </li>
+                    <li>
+                        <p>Git pull to test site</p>
+                        <div class="codeBlock">
+<code>git pull</code>
+                        </div>
+                    </li>
+                    <li>
+                        <p>Check whether the latest code is up to test site</p>
+                        <div class="codeBlock">
+<code>https://test<span contenteditable="true" spellcheck="false">PROJECTNAME</span>member.speed101.pw/</code>
+<code>https://test<span contenteditable="true" spellcheck="false">PROJECTNAME</span>admin.speed101.pw/</code>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="sectionDisplay" id="pluginLang">
+                <h4>Plugin Language</h4>
+                <ol>
+                    <li>
+                        Open project language file, <a href="https://docs.google.com/spreadsheets/d/1tO3cnN6ovyjyYIrJ6raogXZ_ZHq88dCUnlDH1J8NPcw/edit#gid=0" target="_blank">refer here</a>
+                    </li>
+                    <li>Go to last row of MEMBER site and add a row below</li>
+                    <li>Add your new language code</li>
+                    <li>After done adding all language code, download the excel sheet</li>
+                    <li>Open project Super Admin, <a href="https://docs.google.com/spreadsheets/d/1tO3cnN6ovyjyYIrJ6raogXZ_ZHq88dCUnlDH1J8NPcw/edit#gid=0" target="_blank">refer here</a></li>
+                    <li>
+                        Login to Super Admin
+                        <ul>
+                            <li>acc: superadmin</li>
+                            <li>pw: abcd1234</li>
+                        </ul>
+                    </li>
+                    <li>Click language > import translations</li>
+                    <li>Upload the downloaded excel sheet (refer No.4)</li>
+                    <li>Click import</li>
+                    <li>After import successfully, grab latest language to your local repository (<a href="#grabLang">refer here</a>)</li>
+                    <li>Refresh your project page and check whether the language is updated</li>
+                </ol>
+            </div>
+
+            <div class="sectionDisplay" id="projectInfo">
+                <h4>Project Information</h4>
+                <ul>
+                    <li>
+                        Each project includes:
+                        <ul>
+                            <li>Member Site / App</li>
+                            <li>Admin Site</li>
+                            <li>Super Admin (For local dev usage only)</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Each project has different config.php and language files
+                    </li>
+                    <li>
+                        File for shared script:
+                        <ul>
+                            <li>sharejs.php</li>
+                        </ul>
+                    </li>
+                    <li>
+                        File for shared function:
+                        <ul>
+                            <li>general.js</li>
+                        </ul>
+                    </li>
+                    <li>
+                        File for navbar/sidebar/menu script:
+                        <ul>
+                            <li>headerjs.php</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sectionDisplay" id="htmlGuide">
+                <h4>HTML Guide</h4>
+                <ul>
+                    <li>
+                        Before you code, you need to:
+                        <ul>
+                            <li>Think of responsive view</li>
+                            <li>See overall website design</li>
+                            <li>Make sure to standardize the layout</li>
+                            <li>Not recommended to duplicate code for responsive view, better to use css for responsive purpose</li>
+                        </ul>
+                    </li>
+                    <li>
+                        What you need to know:
+                        <ul>
+                            <li><a href="https://getbootstrap.com/docs/4.6/layout/grid/" target="_blank">Bootstrap grid system</a></li>
+                            <li><a href="https://getbootstrap.com/docs/4.0/utilities/spacing/" target="_blank">Bootstrap spacing</a></li>
+                            <li><a href="https://www.w3schools.com/css/default.asp" target="_blank">CSS basics</a></li>
+                            <li><a href="hhttps://www.w3schools.com/icons/" target="_blank">Icon usage</a></li>
+                            <li><a href="https://fontawesome.com/v5/search?m=free&s=solid%2Cregular%2Cbrands" target="_blank">Font Awesome Icon</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sectionDisplay" id="cssGuide">
+                <h4>CSS Guide</h4>
+                <ul>
+                    <li>
+                        CSS files include:
+                        <ul>
+                            <li>login.css <br>(for before login pages - include responsive)</li>
+                            <li>header.css <br>(for menu, navbar, sidebar, footer - include responsive view</li>
+                            <li>custom.css <br>(for after login pages - pc view only)</li>
+                            <li>customResponsive.css <br>(for after login pages - responsive view only)</li>
+                        </ul>
+                    </li>
+                    <li>Do not use inline style CSS except for plugin usage</li>
+                    <li>It is recommended to use global classes</li>
+                    <li>Each project font family is put inside custom.css</li>
+                </ul>
+            </div>
         </div>
     </div>
     

@@ -31,8 +31,9 @@
                             <li>Project name (eg. copyright)</li>
                         </ul>
                     </li>
+                    <li>Double check when importing LANGUAGE file in super admin.</li>
                     <li>Do not create account in LIVE site. Use DIRECTOR account if test is needed.</li>
-                    <li>Double check when importing language file in super admin.</li>
+                    <li>Do not tune code directly in MASTER/LIVE branch</li>
                 </ol>
             </div>
             <div class="sectionDisplay alert alert-success">
@@ -59,10 +60,12 @@
 <code>var debug           = 0;</code>
 <code>var bypassBlocking  = 0;</code>
 <code>var bypassLoading   = 0;</code>
+<br>
 <code>var formData  = {</code>
 <code>    command    : <span contenteditable="true">command1</span>, //api command name</code>
 <code>    <span contenteditable="true">username</span>: <span contenteditable="true">username</span> //params that required to pass to backend</code>
 <code>};</code>
+<br>
 <code>var fCallback = loadDefaultListing;</code>
 <code>ajaxSend(url, formData, method, fCallback, debug, bypassBlocking, bypassLoading, 0); // Call backend using this function</code>
 <br>
@@ -579,6 +582,13 @@
 <code>		// countdown end</code>
 <code>	}</code>
 <code>}, 1000);</code>
+                </div>
+            </div>
+            <div class="sectionDisplay" id="postData">
+                <h4>POST Data</h4>
+                <p>POST data to different page with new tab</p>
+                <div class="codeBlock">
+<code>$.redirect("URL", {DATA},"POST","_blank")</code>
                 </div>
             </div>
             <div class="sectionDisplay" id="setCookie">

@@ -25,7 +25,7 @@ p {
     margin: 0;
 }
 
-p.nextMethod {
+.nextMethod {
     margin-top: 15px;
 }
 
@@ -62,6 +62,15 @@ p.nextMethod {
 .sideBar .sideBarItem:hover, .sideBar .sideBarItem.active {
     background-color: #efefef;
     text-decoration: none;
+}
+
+.sideBar .sideBarItem.redColor {
+    background-color: #a92330;
+    color: #fff;
+}
+
+.sideBar .sideBarItem.redColor:hover, .sideBar .sideBarItem.redColor.active {
+    background-color: #721c24;
 }
 
 .bodyContent {
@@ -160,6 +169,10 @@ span[contenteditable="true"]:focus {
 
 .red {
     color: red;
+}
+
+.blue {
+    color: blue;
 }
 
 .imgModal {
