@@ -584,6 +584,7 @@
 <code>}, 1000);</code>
                 </div>
             </div>
+
             <div class="sectionDisplay" id="postData">
                 <h4>POST Data</h4>
                 <p>POST data to different page with new tab</p>
@@ -591,6 +592,37 @@
 <code>$.redirect("URL", {DATA},"POST","_blank")</code>
                 </div>
             </div>
+
+            <div class="sectionDisplay" id="splitArray">
+                <h4>Split array</h4>
+                <p>To break down an array to a new array</p>
+                <div class="codeBlock">
+<code>var <span contenteditable="true">newArray</span> = <span contenteditable="true">data</span>.slice().splice(<span contenteditable="true">0</span>,<span contenteditable="true">7</span>);</code>
+                </div>
+            </div>
+
+            <div class="sectionDisplay" id="confirmModal">
+                <h4>Confirmation Modal</h4>
+                <p>To trigger a confirmation modal with confirm button function</p>
+                <div class="codeBlock">
+<code>showMessage('Are you sure want to purchase?', 'warning', '<?php echo $translations['M00373'][$language]; //Confirmation ?>', 'warning', '',{Confirm:"Confirm"});</code>
+<br>
+<code>$('#canvasConfirmBtn').click(function(){</code>
+<code>    //code here</code>
+<code>});</code>
+                </div>
+            </div>
+
+            <div class="sectionDisplay" id="objIndex">
+                <h4>Object Index in Array</h4>
+                <p>To find the index of an object in an array</p>
+                <div class="codeBlock">
+<code>Const index = array.findIndex(object=>{</code>
+<code>    returnobject.<span contenteditable="true">name</span>==='<span contenteditable="true">lorem</span>';</code>
+<code>});</code>
+                </div>
+            </div>
+
             <div class="sectionDisplay" id="setCookie">
                 <h4>Set Cookie</h4>
                 <p>regLogin.php</p>
