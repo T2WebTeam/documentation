@@ -2,6 +2,7 @@ $(document).ready(function(){
     $("#sideBar").load("sidebar.html");
     $("#debugSideBar").load("debugSidebar.html");
     $("#vueSideBar").load("vueSidebar.html");
+    $("#cleanBaseSideBar").load("cleanBaseSidebar.html");
     $("#setupWinSideBar").load("setupWinSidebar.html");
     $("span[contenteditable='true']").attr("spellcheck", "false");
     $(".codeBlock").before(`<a class="copyBtn" href="javascript:;" onclick="copyToClipboard(this)"><i class="far fa-copy"></i></a>`);
@@ -43,7 +44,7 @@ function copyToClipboard(n) {
 }
 
 function checkPwd() {
-    var baseString = 'dDJ3ZWJ0ZWFt';
+    var baseString = 'dDJ3ZWJ0ZWFt'; //t2webteam
     var enteredPwd = $("#password").val();
     var decodedString = window.btoa(enteredPwd);
 
